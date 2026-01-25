@@ -1,0 +1,13 @@
+body {
+  font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
+}
+table {
+  margin: 0 auto;
+}
+img, div.mermaid>svg {
+  display: block;
+  margin: 0 auto;
+}
+th, td {
+  vertical-align: middle;
+}
