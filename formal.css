@@ -1,11 +1,16 @@
 html {
   --main-font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
   --main-font-size: 12pt;
-  --main-font-color: #000;
-  --block-border-color: #88888888;
   --block-border-style: solid;
   --block-border-radius: 0.25em;
+  --block-border-color: #88888888;
   --block-background-color: #eeeeee88;
+}
+.vscode-light {
+  --main-font-color: #000;
+}
+.vscode-dark {
+  --main-font-color: #fff;
 }
 html>body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc])>div.markdown-preview {
   padding: 0em;
@@ -51,7 +56,7 @@ th, td { vertical-align: middle; }
 
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
-strong { font-weight: bold; color: #000; }
+strong { font-weight: bold; color: var(--main-font-color); }
 
 body blockquote, div.markdown-preview blockquote, body div.markdown-preview blockquote {
   display: block;
