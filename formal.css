@@ -5,12 +5,8 @@ html {
   --block-border-radius: 0.25em;
   --block-border-color: #88888888;
   --block-background-color: #eeeeee88;
-}
-.vscode-light {
-  --main-font-color: #000;
-}
-.vscode-dark {
-  --main-font-color: #fff;
+  .light, .vscode-light { --main-font-color: #000; }
+  .dark, .vscode-dark { --main-font-color: #fff; }
 }
 html>body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc])>div.markdown-preview {
   padding: 0em;
@@ -19,7 +15,7 @@ html>body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-
   position: static;
   transform: none;
 }
-body:not(:has(>div.markdown-preview)), body>div.markdown-preview{
+html>body:not(:has(>div.markdown-preview)), html>body>div.markdown-preview, html>body:not(:has(>div.markdown-preview)), html>body>div.markdown-preview {
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   color: var(--main-font-color);
@@ -35,8 +31,8 @@ html body h4 { font-size: 1.4em; color: var(--main-font-color); }
 html body h5 { font-size: 1.2em; color: var(--main-font-color); }
 html body h6 { font-size: 1.0em; color: var(--main-font-color); }
 
-body>p, div.markdown-preview>p { text-align: center; }
-body>p:not(:has(>img:first-child)), div.markdown-preview>p:not(:has(>img:first-child)), blockquote>p:not(:has(>img:first-child)) {
+p { text-align: center; }
+p:not(:has(>img:first-child)) {
   text-indent: 2em;
   text-align: justify;
 }
@@ -46,9 +42,12 @@ img, svg, code.language-Mermaid {
   margin: 0 auto;
 }
 p>img+br, p>svg+br { display: none; }
+svg p {
+  text-indent: 0 !important;
+  text-align: center !important;
+}
 svg p, svg text, svg tspan {
   font-family: var(--main-font-family);
-  /* font-size: var(--main-font-size); */
 }
 
 table { margin: 0 auto; }
