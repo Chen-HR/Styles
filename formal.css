@@ -4,7 +4,7 @@ html {
   --block-border-style: solid;
   --block-border-radius: 0.25em;
   --block-border-color: #88888888;
-  --block-background-color: #eeeeee88;
+  --block-background-color: #88888888;
   .light, .vscode-light { --main-font-color: #000; }
   .dark, .vscode-dark { --main-font-color: #fff; }
 }
