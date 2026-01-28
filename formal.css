@@ -10,7 +10,7 @@ html {
   --block-border-style: solid;
   --block-border-radius: 0.25em;
   --block-border-color: #88888888;
-  --block-background-color: #44444488;
+  --block-background-color: #22222288;
   
   --table-border-width-thin: 1px;
   --table-border-width-bold: 2px;
@@ -28,8 +28,8 @@ html {
 .dark, .vscode-dark {
   --main-font-color: #fff; 
   --block-border-color: #88888888;
-  --block-background-color: #44444488;
-  --table-background-color: #44444488;
+  --block-background-color: #22222288;
+  --table-background-color: #22222288;
   --table-border-color: #fff;
 }
 body {
