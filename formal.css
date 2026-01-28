@@ -54,6 +54,10 @@ p:not(:has(>img:first-child)) {
   text-align: justify;
 }
 
+ol, ul {
+  padding-left: 2em;
+}
+
 img, svg, code.language-Mermaid {
   display: block;
   margin: 0 auto;
