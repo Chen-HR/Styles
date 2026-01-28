@@ -1,35 +1,51 @@
 html {
   --main-font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
   --main-font-size: 12pt;
+  --main-font-color: #000; 
+
+  --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+  --code-font-size: 0.8em;
+
   --block-border-style: solid;
   --block-border-radius: 0.25em;
   --block-border-color: #88888888;
-  --block-background-color: #88888888;
-  .light, .vscode-light { --main-font-color: #000; }
-  .dark, .vscode-dark { --main-font-color: #fff; }
+  --block-background-color: #44444488;
+  
+  --table-border-width-thin: 1px;
+  --table-border-width-bold: 2px;
+  --table-border-style: solid;
+  --table-border-color: #000;
+  --table-background-color: #bbbbbb88;
 }
-html>body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc])>div.markdown-preview {
-  padding: 0em;
-  width: auto;
-  height: auto;
-  position: static;
-  transform: none;
+.light, .vscode-light {
+  --main-font-color: #000; 
+  --block-border-color: #88888888;
+  --block-background-color: #bbbbbb88;
+  --table-background-color: #bbbbbb88;
+  --table-border-color: #000;
 }
-html>body:not(:has(>div.markdown-preview)), html>body>div.markdown-preview, html>body:not(:has(>div.markdown-preview)), html>body>div.markdown-preview {
+.dark, .vscode-dark {
+  --main-font-color: #fff; 
+  --block-border-color: #88888888;
+  --block-background-color: #44444488;
+  --table-background-color: #44444488;
+  --table-border-color: #fff;
+}
+body {
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   color: var(--main-font-color);
   margin: 0em 1em;
 }
 
-html body h1.title { text-align: center; font-size: 2.2em; }
-html body h1.subtitle { text-align: center; font-size: 2em; }
-html body h1 { font-size: 2.0em; color: var(--main-font-color); }
-html body h2 { font-size: 1.8em; color: var(--main-font-color); }
-html body h3 { font-size: 1.6em; color: var(--main-font-color); }
-html body h4 { font-size: 1.4em; color: var(--main-font-color); }
-html body h5 { font-size: 1.2em; color: var(--main-font-color); }
-html body h6 { font-size: 1.0em; color: var(--main-font-color); }
+.title { text-align: center; font-size: 2.2em; }
+.subtitle { text-align: center; font-size: 2em; }
+h1 { font-size: 2.0em; color: var(--main-font-color); }
+h2 { font-size: 1.8em; color: var(--main-font-color); }
+h3 { font-size: 1.6em; color: var(--main-font-color); }
+h4 { font-size: 1.4em; color: var(--main-font-color); }
+h5 { font-size: 1.2em; color: var(--main-font-color); }
+h6 { font-size: 1.0em; color: var(--main-font-color); }
 
 p { text-align: center; }
 p:not(:has(>img:first-child)) {
@@ -50,14 +66,37 @@ svg p, svg text, svg tspan {
   font-family: var(--main-font-family);
 }
 
-table { margin: 0 auto; }
-th, td { vertical-align: middle; }
+table {
+  margin: 0 auto;
+  vertical-align: middle;
+  border: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+  th, td {
+    border: var(--table-border-width-thin) var(--table-border-style) var(--table-border-color);
+  }
+  th { 
+    border-top: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+    border-bottom: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+  }
+  th:first-child, td:first-child { 
+    border-left: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+    border-right: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+  }
+}
+th, td:first-child {
+  background-color:var(--block-background-color);
+  text-align: center;
+  font-weight: bold;
+}
+td:not(:first-child) {
+  text-align: justify;
+}
+
 
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 strong { font-weight: bold; color: var(--main-font-color); }
 
-body blockquote, div.markdown-preview blockquote, body div.markdown-preview blockquote {
+blockquote {
   display: block;
   color: var(--main-font-color);
   font-size: var(--main-font-size);
@@ -76,33 +115,15 @@ body blockquote, div.markdown-preview blockquote, body div.markdown-preview bloc
 pre:has(> code:first-child):not(:has(svg)) {
   white-space: pre-wrap;
   background-color: var(--block-background-color);
-  border: 0.1em solid var(--block-border-color);
+  border: 0.1em var(--block-border-style) var(--block-border-color);
   border-radius: var(--block-border-radius);
   padding: 0.5em;
 }
 code {
-  font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
-  font-size: 0.8em;
+  font-family: var(--code-font-family);
+  font-size: var(--code-font-size);
   overflow: auto;
   display: inline-block;
-  tab-size: 2;
+  tab-size: var(--code-tab-size);
   background: none;
-}
-
-.reference-list {
-  counter-reset: ref-counter;
-  list-style: none;
-  padding-left: 0;
-  li {
-    counter-increment: ref-counter;
-    display: flex;
-    margin-bottom: 0.5em;
-  }
-  li::before {
-    content: "[" counter(ref-counter) "]";
-    margin-right: 0.5em;
-    flex-shrink: 0; 
-    width: 2.5em;
-    text-align: right;
-  }
 }

@@ -1,0 +1,188 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+.markdown-preview.markdown-preview {
+  // modify your style here
+  // eg: background-color: blue;
+  --main-font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
+  --main-font-size: 12pt;
+  --main-font-color: #fff; 
+  --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+  --code-font-size: 0.8em;
+  --block-border-style: solid;
+  --block-border-radius: 0.25em;
+  --block-border-color: #88888888;
+  --block-background-color: #44444488;
+  --table-border-width-thin: 1px;
+  --table-border-width-bold: 2px;
+  --table-border-style: solid;
+  --table-border-color: #fff;
+  --table-background-color: #44444488;
+  .light, .vscode-light {
+    --main-font-color: #000; 
+    --block-border-color: #88888888;
+    --block-background-color: #bbbbbb88;
+    --table-background-color: #bbbbbb88;
+    --table-border-color: #000;
+  }
+  .dark, .vscode-dark {
+    --main-font-color: #fff; 
+    --block-border-color: #88888888;
+    --block-background-color: #44444488;
+    --table-background-color: #44444488;
+    --table-border-color: #fff;
+  }
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  color: var(--main-font-color);
+  margin: 0em 1em;
+
+  .title { text-align: center; font-size: 2.2em; }
+  .subtitle { text-align: center; font-size: 2em; }
+  h1 { font-size: 2.0em; color: var(--main-font-color); }
+  h2 { font-size: 1.8em; color: var(--main-font-color); }
+  h3 { font-size: 1.6em; color: var(--main-font-color); }
+  h4 { font-size: 1.4em; color: var(--main-font-color); }
+  h5 { font-size: 1.2em; color: var(--main-font-color); }
+  h6 { font-size: 1.0em; color: var(--main-font-color); }
+
+  p { text-align: center; }
+  p:not(:has(>img:first-child)) {
+    text-indent: 2em;
+    text-align: justify;
+  }
+
+  img, svg, code.language-Mermaid {
+    display: block;
+    margin: 0 auto;
+  }
+  p>img+br, p>svg+br { display: none; }
+  svg p {
+    text-indent: 0 !important;
+    text-align: center !important;
+  }
+  svg p, svg text, svg tspan {
+    font-family: var(--main-font-family);
+  }
+
+  table {
+    margin: 0 auto;
+    vertical-align: middle;
+    border: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+    th, td {
+      border: var(--table-border-width-thin) var(--table-border-style) var(--table-border-color);
+    }
+    th { 
+      border-top: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+      border-bottom: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+    }
+    th:first-child, td:first-child { 
+      border-left: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+      border-right: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
+    }
+  }
+  th, td:first-child {
+    background-color:var(--block-background-color);
+    text-align: center;
+    font-weight: bold;
+  }
+  td:not(:first-child) {
+    text-align: justify;
+  }
+
+
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { font-weight: bold; color: var(--main-font-color); }
+
+  blockquote {
+    display: block;
+    color: var(--main-font-color);
+    font-size: var(--main-font-size);
+    padding: 0em;
+    padding-left: 1em;
+    margin: 0em;
+    margin-block: 0.5em;
+    margin-inline: 0.5em;
+    border-left-color: var(--block-border-color);
+    border-left-style: var(--block-border-style);
+    border-left-width: 0.5em;
+    border-radius: var(--block-border-radius);
+    background-color: var(--block-background-color);
+  }
+
+  pre:has(> code:first-child):not(:has(svg)) {
+    white-space: pre-wrap;
+    background-color: var(--block-background-color);
+    border: 0.1em var(--block-border-style) var(--block-border-color);
+    border-radius: var(--block-border-radius);
+    padding: 0.5em;
+  }
+  code {
+    font-family: var(--code-font-family);
+    font-size: var(--code-font-size);
+    overflow: auto;
+    display: inline-block;
+    tab-size: var(--code-tab-size);
+    background: none;
+  }
+
+  #reference+ul, .reference+ul,
+  #reference+ol, .reference+ol {
+    counter-reset: ref-counter;
+    list-style: none;
+    padding-left: 0;
+    li {
+      counter-increment: ref-counter;
+      position: relative;
+      padding-left: 2em;
+    }
+    li::before {
+      content: "[" counter(ref-counter) "]";
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: left;
+    }
+  }
+
+  @media print {
+    --main-font-color: #fff; 
+    --block-border-color: #88888888;
+    --block-background-color: #44444488;
+    --table-background-color: #44444488;
+    --table-border-color: #fff;
+  }
+
+  // custom prince pdf export style
+  &.prince {
+    --main-font-color: #000; 
+    --block-border-color: #88888888;
+    --block-background-color: #bbbbbb88;
+    --table-background-color: #bbbbbb88;
+    --table-border-color: #000;
+  }
+
+  // custom presentation style
+  .reveal .slides {
+    // modify all slides
+  }
+
+  .slides > section:nth-child(1) {
+    // this will modify `the first slide`
+  }
+
+}
+
+body[for="html-export"] > div.crossnote.markdown-preview { 
+  --main-font-color: #000; 
+  --block-border-color: #88888888;
+  --block-background-color: #bbbbbb88;
+  --table-background-color: #bbbbbb88;
+  --table-border-color: #000;
+
+}
+
+.md-sidebar-toc.md-sidebar-toc {
+  // sidebar TOC style
+}

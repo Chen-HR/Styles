@@ -1,0 +1,18 @@
+#reference+ul, .reference+ul,
+#reference+ol, .reference+ol {
+  counter-reset: ref-counter;
+  list-style: none;
+  padding-left: 0;
+  li {
+    counter-increment: ref-counter;
+    position: relative;
+    padding-left: 2em;
+  }
+  li::before {
+    content: "[" counter(ref-counter) "]";
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+  }
+}
