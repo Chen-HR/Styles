@@ -56,7 +56,12 @@ p:not(:has(>img:first-child)) {
 
 ol, ul {
   padding-left: 2em;
+  li::marker {
+    font-weight: bold;
+    text-align: left;
+  }
 }
+
 
 img, svg, code.language-Mermaid {
   display: block;

@@ -1,3 +1,4 @@
+/* This file is need for customizing the CSS of the Markdown Preview Enhanced extension. File path: C:\Users\{username}\.crossnote\style.less */
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
@@ -55,6 +56,10 @@
 
   ol, ul {
     padding-left: 2em;
+    li::marker {
+      font-weight: bold;
+      text-align: left;
+    }
   }
 
   img, svg, code.language-Mermaid {
