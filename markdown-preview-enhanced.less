@@ -9,6 +9,7 @@
   --main-font-color: #fff; 
   --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
   --code-font-size: 0.8em;
+  --code-tab-size: 1em;
   --block-border-style: solid;
   --block-border-radius: 0.25em;
   --block-border-color: #88888888;
@@ -117,14 +118,16 @@
     border: 0.1em var(--block-border-style) var(--block-border-color);
     border-radius: var(--block-border-radius);
     padding: 0.5em;
+    code {
+      overflow: auto;
+      font-size: var(--code-font-size);
+      tab-size: var(--code-tab-size);
+      display: inline-block;
+    }
   }
   code {
-    font-family: var(--code-font-family);
-    font-size: var(--code-font-size);
-    overflow: auto;
-    display: inline-block;
-    tab-size: var(--code-tab-size);
     background: none;
+    font-family: var(--code-font-family);
   }
 
   #reference+ul, .reference+ul,
@@ -147,11 +150,11 @@
   }
 
   @media print {
-    --main-font-color: #fff; 
+    --main-font-color: #000; 
     --block-border-color: #88888888;
-    --block-background-color: #44444488;
-    --table-background-color: #44444488;
-    --table-border-color: #fff;
+    --block-background-color: #bbbbbb88;
+    --table-background-color: #bbbbbb88;
+    --table-border-color: #000;
   }
 
   // custom prince pdf export style
@@ -174,7 +177,7 @@
 
 }
 
-body[for="html-export"] > div.crossnote.markdown-preview { 
+body[for="html-export"] > div.crossnote.markdown-preview {
   --main-font-color: #000; 
   --block-border-color: #88888888;
   --block-background-color: #bbbbbb88;

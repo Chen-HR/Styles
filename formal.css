@@ -5,6 +5,7 @@ html {
 
   --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
   --code-font-size: 0.8em;
+  --code-tab-size: 1em;
 
   --block-border-style: solid;
   --block-border-radius: 0.25em;
@@ -118,12 +119,14 @@ pre:has(> code:first-child):not(:has(svg)) {
   border: 0.1em var(--block-border-style) var(--block-border-color);
   border-radius: var(--block-border-radius);
   padding: 0.5em;
+  code {
+    overflow: auto;
+    font-size: var(--code-font-size);
+    tab-size: var(--code-tab-size);
+    display: inline-block;
+  }
 }
 code {
-  font-family: var(--code-font-family);
-  font-size: var(--code-font-size);
-  overflow: auto;
-  display: inline-block;
-  tab-size: var(--code-tab-size);
   background: none;
+  font-family: var(--code-font-family);
 }
