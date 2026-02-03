@@ -1,0 +1,27 @@
+/* This file is need for customizing the CSS of the Markdown Preview Enhanced extension. File path: C:\Users\{username}\.crossnote\style.less */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@import url("https://cdn.statically.io/gh/Chen-HR/Styles/0.1.6/Markdown Preview Enhanced/Page.css");
+.markdown-preview.markdown-preview {
+
+  @import url("https://cdn.statically.io/gh/Chen-HR/Styles/0.1.6/formal.css");
+  @import url("https://cdn.statically.io/gh/Chen-HR/Styles/0.1.6/reference.css");
+  @import url("https://cdn.statically.io/gh/Chen-HR/Styles/0.1.6/list-marker-left.css");
+
+  @media print {
+    --main-font-color: #000; 
+    --block-border-color: #88888888;
+    --block-background-color: #cccccc88;
+    --table-background-color: #cccccc88;
+    --table-border-color: #000;
+  }
+
+  &.prince {
+    --main-font-color: #000; 
+    --block-border-color: #88888888;
+    --block-background-color: #cccccc88;
+    --table-background-color: #cccccc88;
+    --table-border-color: #000;
+  }
+}

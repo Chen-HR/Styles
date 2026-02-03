@@ -1,44 +1,3 @@
-html {
-  --main-font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
-  --main-font-size: 12pt;
-  --main-font-color: #000; 
-
-  --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
-  --code-font-size: 0.8em;
-  --code-tab-size: 1em;
-
-  --block-border-style: solid;
-  --block-border-radius: 0.25em;
-  --block-border-color: #88888888;
-  --block-background-color: #22222288;
-  
-  --table-border-width-thin: 1px;
-  --table-border-width-bold: 2px;
-  --table-border-style: solid;
-  --table-border-color: #000;
-  --table-background-color: #bbbbbb88;
-}
-.light, .vscode-light {
-  --main-font-color: #000; 
-  --block-border-color: #88888888;
-  --block-background-color: #bbbbbb88;
-  --table-background-color: #bbbbbb88;
-  --table-border-color: #000;
-}
-.dark, .vscode-dark {
-  --main-font-color: #fff; 
-  --block-border-color: #88888888;
-  --block-background-color: #22222288;
-  --table-background-color: #22222288;
-  --table-border-color: #fff;
-}
-body {
-  font-family: var(--main-font-family);
-  font-size: var(--main-font-size);
-  color: var(--main-font-color);
-  margin: 0em 1em;
-}
-
 .title { text-align: center; font-size: 2.2em; }
 .subtitle { text-align: center; font-size: 2em; }
 h1 { font-size: 2.0em; color: var(--main-font-color); }
@@ -54,14 +13,20 @@ p:not(:has(>img:first-child)) {
   text-align: justify;
 }
 
-ol, ul {
-  padding-left: 2em;
-  li::marker {
-    font-weight: bold;
-    text-align: left !important;
-  }
+ol, ul { padding-left: 0; }
+ol>li, ul>li {
+  position: relative;
+  padding-left: var(--li-padding-left); 
 }
-
+ol>li::before, ul>li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+ol { counter-reset: counter; }
+ol>li { counter-increment: counter; }
+ol>li::before { content: counter(counter) "."; }
+ul>li::before { content: var(--ul-li-before-content); }
 
 img, svg, code.language-Mermaid {
   display: block;
@@ -78,9 +43,13 @@ svg p, svg text, svg tspan {
 
 table {
   margin: 0 auto;
+  display: revert;
+  width: auto;
+  word-break: auto-phrase;
   vertical-align: middle;
   border: var(--table-border-width-bold) var(--table-border-style) var(--table-border-color);
   th, td {
+    padding: 0em;
     border: var(--table-border-width-thin) var(--table-border-style) var(--table-border-color);
   }
   th { 

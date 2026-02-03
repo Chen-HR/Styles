@@ -1,0 +1,12 @@
+ol, ul {
+  list-style: none;
+}
+ol>li::before, ul>li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+ol { counter-reset: counter; }
+ol>li { counter-increment: counter; }
+ol>li::before { content: counter(counter) "."; }
+ul>li::before { content: var(--ul-li-before-content); }

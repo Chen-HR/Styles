@@ -2,11 +2,10 @@
 #reference+ol, #參考文獻+ol, .reference+ol {
   counter-reset: ref-counter;
   list-style: none;
-  padding-left: 0;
   li {
     counter-increment: ref-counter;
     position: relative;
-    padding-left: 2em;
+    padding-left: var(--li-padding-left);
   }
   li::before {
     content: "[" counter(ref-counter) "]";
