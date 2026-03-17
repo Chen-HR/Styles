@@ -1,0 +1,14 @@
+@import "../variable.css";
+
+@import "../formal.css";
+@import "../algorithm.css";
+@import "../reference.css";
+
+body {
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  color: var(--main-font-color);
+  margin: 0em 1em;
+  width: auto;
+  height: auto;
+}

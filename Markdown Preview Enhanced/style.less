@@ -2,13 +2,16 @@
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
-@import url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.6.2/Markdown Preview Enhanced/Page.css");
+@import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.7/variable.css");
+
+body[for="html-export"] > div.crossnote.markdown-preview {
+  --main-font-color: #000; 
+  --block-border-color: #88888888;
+  --block-background-color: #cccccc88;
+  --table-background-color: #cccccc88;
+  --table-border-color: #000;
+}
 .markdown-preview.markdown-preview {
-
-  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.6.2/formal.css");
-  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.6.2/reference.css");
-  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.6.2/list-marker-left.css");
-
   @media print {
     --main-font-color: #000; 
     --block-border-color: #88888888;
@@ -16,7 +19,6 @@
     --table-background-color: #cccccc88;
     --table-border-color: #000;
   }
-
   &.prince {
     --main-font-color: #000; 
     --block-border-color: #88888888;
@@ -24,4 +26,25 @@
     --table-background-color: #cccccc88;
     --table-border-color: #000;
   }
+  /* .reveal .slides { } */
+  /* .slides > section:nth-child(1) { } */
+
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  color: var(--main-font-color);
+  margin: var(--main-margin-topbottom) var(--main-margin-leftright);
+  width: auto;
+  height: auto;
+  
+  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.7/formal.css");
+  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.7/algorithm.css");
+  @import (inline) url("https://cdn.jsdelivr.net/gh/Chen-HR/Styles@0.1.7/reference.css");
 }
+.markdown-preview.markdown-preview.markdown-preview.markdown-preview.markdown-preview {
+  left: 0;
+  transform: translateX(0px);
+  padding: var(--main-padding-topbottom) var(--main-padding-leftright);
+}
+
+/* .md-sidebar-toc.md-sidebar-toc { } */

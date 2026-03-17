@@ -1,7 +1,8 @@
-#reference+ul, #references+ul, #參考文獻+ul, .reference+ul, .references+ul,
-#reference+ol, #references+ol, #參考文獻+ol, .reference+ol, .references+ol {
+reference>ul, references>ul, #reference+ul, #references+ul, .reference+ul, .references+ul, #參考文獻+ul,
+reference>ol, references>ol, #reference+ol, #references+ol, .reference+ol, .references+ol, #參考文獻+ol {
   counter-reset: ref-counter;
   list-style: none;
+  padding-left: 0;
   li {
     counter-increment: ref-counter;
     position: relative;

@@ -1,15 +1,16 @@
-
-@import "../formal.css";
-@import "../reference.css";
-@import "../list-marker-left.css";
-
 html {
-  --main-font-family: 'Times New Roman', 'Arial', '標楷體', 'BiauKai';
+  --main-font-family: 'Times New Roman', 'Symbol', 'Arial', '標楷體', 'BiauKai';
   --main-font-size: 12pt;
   --main-font-color: #000; 
+  --main-line-height: 1.6;
+  --main-padding-topbottom: 0em;
+  --main-padding-leftright: 1em;
+  --main-margin-topbottom: 0em;
+  --main-margin-leftright: 1em;
 
+  --ol-marker-width: 1.5em;
+  --ul-marker-width: 1.5em;
   --li-padding-left: 2em;
-  --ul-li-before-content: "•";
 
   --code-font-family: "SF Mono", "Monaco", "Menlo", "Consolas", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
   --code-font-size: 0.8em;
@@ -39,12 +40,4 @@ html {
   --block-background-color: #22222288;
   --table-background-color: #22222288;
   --table-border-color: #fff;
-}
-body {
-  font-family: var(--main-font-family);
-  font-size: var(--main-font-size);
-  color: var(--main-font-color);
-  margin: 0em 1em;
-  width: auto;
-  height: auto;
 }

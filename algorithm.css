@@ -1,0 +1,46 @@
+h6.algorithm {
+  font-weight: normal;
+  border-top: solid 2px;
+  margin-bottom: 0;
+}
+h6.algorithm+ul, h6.algorithm+ol {
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  list-style: none;
+  font-weight: bold;
+  padding-left: 0;
+}
+h6.algorithm+ul li, h6.algorithm+ol li {
+  padding-left: 0;
+}
+h6.algorithm+ul li::before, h6.algorithm+ol li::before, 
+h6.algorithm+ul li::marker, h6.algorithm+ol li::marker {
+  content: none;
+}
+h6.algorithm+ul>li ul, h6.algorithm+ul>li ol, 
+h6.algorithm+ol>li ol, h6.algorithm+ol>li ul {
+  padding-left: 0;
+}
+h6.algorithm+ul>li>ul, h6.algorithm+ul>li>ol, h6.algorithm+ol>li>ol, h6.algorithm+ol>li>ul {
+  font-weight: normal;
+  list-style: none;
+  padding-left: var(--li-padding-left);
+}
+h6.algorithm+ul>li:nth-child(3) ul, h6.algorithm+ul>li:nth-child(3) ol, 
+h6.algorithm+ol>li:nth-child(3) ol, h6.algorithm+ol>li:nth-child(3) ul {
+  padding-left: var(--li-padding-left);
+}
+h6.algorithm+ul>li:nth-child(3)>ul, h6.algorithm+ul>li:nth-child(3)>ol, 
+h6.algorithm+ol>li:nth-child(3)>ol, h6.algorithm+ol>li:nth-child(3)>ul {
+  counter-reset: line-number;
+}
+h6.algorithm+ul>li:nth-child(3)>ul li::before, h6.algorithm+ul>li:nth-child(3)>ol li::before, 
+h6.algorithm+ol>li:nth-child(3)>ol li::before, h6.algorithm+ol>li:nth-child(3)>ul li::before { 
+  position: absolute;
+  left: 0;
+  counter-increment: line-number;
+  padding-left: var(--main-padding-leftright);
+  width: var(--ul-marker-width);
+  content: counter(line-number) ":";
+  text-align: right;
+}

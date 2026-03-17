@@ -13,20 +13,10 @@ p:not(:has(>img:first-child)) {
   text-align: justify;
 }
 
-ol, ul { padding-left: 0; }
-ol>li, ul>li {
-  position: relative;
-  padding-left: var(--li-padding-left); 
-}
-ol>li::before, ul>li::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-ol { counter-reset: counter; }
-ol>li { counter-increment: counter; }
-ol>li::before { content: counter(counter) "."; }
-ul>li::before { content: var(--ul-li-before-content); }
+ol { padding-left: var(--ol-marker-width); }
+ol>li { padding-left: calc(var(--li-padding-left) - var(--ol-marker-width)); }
+ul { padding-left: var(--ul-marker-width); }
+ul>li { padding-left: calc(var(--li-padding-left) - var(--ul-marker-width)); }
 
 img, svg, code.language-Mermaid {
   display: block;
@@ -74,6 +64,7 @@ td:not(:first-child) {
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 strong { font-weight: bold; color: var(--main-font-color); }
+.katex{ font-size: var(--main-font-size); }
 
 blockquote {
   display: block;
