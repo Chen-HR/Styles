@@ -84,6 +84,7 @@ strong { font-weight: bold; color: var(--main-font-color); }
     background-color: rgba(0, 0, 0, 0);
   }
 }
+eq { text-indent: 0; }
 
 blockquote {
   display: block;
