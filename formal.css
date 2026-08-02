@@ -13,10 +13,24 @@ p:not(:has(>img:first-child)) {
   text-align: justify;
 }
 
+columns {
+  display: flex;
+  align-items: center;
+  column {
+    flex: 1;
+    padding: .5em;
+  }
+}
+
 ol { padding-left: var(--ol-marker-width); }
 ol>li { padding-left: calc(var(--li-padding-left) - var(--ol-marker-width)); }
 ul { padding-left: var(--ul-marker-width); }
 ul>li { padding-left: calc(var(--li-padding-left) - var(--ul-marker-width)); }
+
+figure, .figure, table, .table {
+  align-items: center;
+  text-align: center;
+}
 
 img, svg, code.language-Mermaid {
   display: block;
